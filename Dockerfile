@@ -2,7 +2,7 @@
 FROM alpine:latest AS downloader
 
 # Argument for the release URL
-ARG RELEASE_URL="https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.08-beta/full.zip"
+ARG RELEASE_URL
 
 # Install required tools
 RUN apk add --no-cache curl unzip
