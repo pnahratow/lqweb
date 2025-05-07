@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: lqweb
-          image: imagename
+          image: ghcr.io/pnahratow/lqweb:latest
           ports:
             - containerPort: 8080
           resources:
