@@ -1,0 +1,4 @@
+game lq1
+name "LibreQuake"
+basegame lq1
+disablehomedir 1

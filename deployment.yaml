@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lqweb-deployment
+  labels:
+    app: lqweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lqweb
+  template:
+    metadata:
+      labels:
+        app: lqweb
+    spec:
+      containers:
+        - name: lqweb
+          image: imagename
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 50m
+              memory: 100Mi
+            requests:
+              cpu: 50m
+              memory: 100Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lqweb-service
+spec:
+  selector:
+    app: lqweb
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
